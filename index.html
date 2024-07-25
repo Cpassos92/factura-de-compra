@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Facturas - Farmacia Vida Plena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="scroll-container">
+            <h1>Farmacia vida plena</h1>
+        <h3>Registro de Facturas de Compras</h3>
+        <form id="invoice-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="invoice-number">Número de Factura:</label>
+                    <input type="text" id="invoice-number" name="invoice-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="invoice-date">Fecha de Factura:</label>
+                    <input type="date" id="invoice-date" name="invoice-date" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="product-code">Código del Producto:</label>
+                    <input type="text" id="product-code" name="product-code" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Categoría del Producto:</label>
+                    <select id="product-category" name="product-category" required>
+                        <option value="medicamentos">Medicamentos</option>
+                        <option value="insumos-medicos">Insumos Médicos</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="product-name">Nombre del Producto:</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-reference">Referencia del Producto:</label>
+                    <input type="text" id="product-reference" name="product-reference" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="batch-number">Número de Lote:</label>
+                    <input type="text" id="batch-number" name="batch-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Fecha de Vencimiento:</label>
+                    <input type="date" id="expiry-date" name="expiry-date" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity" name="quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="purchase-price">Valor de Compra Unitario:</label>
+                    <input type="number" id="purchase-price" name="purchase-price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="sale-price">Valor de Venta Unitario:</label>
+                    <input type="number" id="sale-price" name="sale-price" step="0.01" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="supplier">Proveedor:</label>
+                <select id="supplier" name="supplier" required>
+                    <option value="proveedor-1">Proveedor 1</option>
+                    <option value="proveedor-2">Proveedor 2</option>
+                    <option value="proveedor-3">Proveedor 3</option>
+                </select>
+            </div>
+            <button type="button" id="add-product">Agregar Producto</button>
+        </form>
+
+        <div id="product-list">
+            <h3>Productos Agregados</h3>
+            <div class="product-header">
+                <span>Código</span>
+                <span>Nombre</span>
+                <span>Referencia</span>
+                <span>Proveedor</span>
+                <span>Compra U.</span>
+                <span>Venta U.</span>
+            </div>
+            <div id="product-items" class="product-items"></div>
+            <div class="totals">
+                <p>Total de Compra: <span id="total-purchase">0.00</span></p>
+                <p>Total de Venta: <span id="total-sale">0.00</span></p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button type="button" id="save">Guardar</button>
+            <button type="button" id="delete-invoice">Eliminar</button>
+            <button type="button" id="upload-invoice">Subir </button>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
